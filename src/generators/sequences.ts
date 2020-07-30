@@ -39,5 +39,21 @@ export function range(start: number, step: number) {
 }
 
 export function prime() {
-  return range(1, 2)
+  let primes = []
+  let cur = 2
+
+  const getNextPrime = () => {
+    while (true) {
+      if (primes.length === 0) return cur
+      if (primes.every((n) => cur % n !== 0)) return cur
+      cur = cur + 1
+    }
+  }
+
+  return () => {
+    const nextPrime = getNextPrime()
+
+    primes.push(nextPrime)
+    return nextPrime
+  }
 }

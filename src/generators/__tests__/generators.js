@@ -46,7 +46,7 @@ describe('Generators', () => {
 
   test('prime sequence', () => {
     const primeGen = generator(prime)
-    const results = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    const results = [2, 3, 5, 7, 11, 13]
 
     results.forEach((result) => {
       expect(primeGen.next()).toBe(result)
