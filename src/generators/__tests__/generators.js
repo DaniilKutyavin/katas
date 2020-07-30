@@ -1,5 +1,5 @@
 const { generator } = require('../')
-const { dummy, factorial, fibonacci, range, prime } = require('../sequences')
+const { dummy, factorial, fibonacci, range, prime, partialSum } = require('../sequences')
 
 describe('Generators', () => {
   test('After calling generator with correct function, it returns the object with next method', () => {
@@ -51,5 +51,17 @@ describe('Generators', () => {
     results.forEach((result) => {
       expect(primeGen.next()).toBe(result)
     })
+  })
+
+  test('partial sum', () => {
+    const nums = [2, 3, 4, 0, 10, 25, 15]
+    const partialSumGen = generator(partialSum, ...nums)
+    const results = [2, 5, 9, 9, 19, 44, 59]
+
+    results.forEach((result) => {
+      expect(partialSumGen.next()).toBe(result)
+    })
+
+    expect(partialSumGen.next).toThrow()
   })
 })

@@ -57,3 +57,17 @@ export function prime() {
     return nextPrime
   }
 }
+
+export function partialSum(...nums: number[]) {
+  let index = 0
+  let sum = 0
+
+  return () => {
+    if (index >= nums.length) throw new Error('Nothing to add')
+
+    sum = sum + nums[index]
+    index++
+
+    return sum
+  }
+}
