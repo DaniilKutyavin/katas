@@ -33,7 +33,11 @@ export function range(start: number, step: number) {
     const result = next
 
     next = next + step
-    
+
     return result
   }
+}
+
+export function prime() {
+  return range(1, 2)
 }
