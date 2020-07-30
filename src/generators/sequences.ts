@@ -25,3 +25,15 @@ export function fibonacci() {
     return result
   }
 }
+
+export function range(start: number, step: number) {
+  let next = start
+
+  return () => {
+    const result = next
+
+    next = next + step
+    
+    return result
+  }
+}

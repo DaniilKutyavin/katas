@@ -1,5 +1,5 @@
 const { generator } = require('../')
-const { dummy, factorial, fibonacci } = require('../sequences')
+const { dummy, factorial, fibonacci, range } = require('../sequences')
 
 describe('Generators', () => {
   test('After calling generator with correct function, it returns the object with next method', () => {
@@ -32,6 +32,15 @@ describe('Generators', () => {
 
     results.forEach((result) => {
       expect(fibbonaciGen.next()).toBe(result)
+    })
+  })
+
+  test('range sequence', () => {
+    const rangeGen = generator(range, 0, 5)
+    const results = [0, 5, 10, 15, 20, 25, 30, 35]
+
+    results.forEach((result) => {
+      expect(rangeGen.next()).toBe(result)
     })
   })
 })
