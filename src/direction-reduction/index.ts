@@ -20,14 +20,14 @@ export function dirReduc(directions: Direction[]) {
 }
 
 const isOpposite = (dir1: Direction, dir2: Direction) => {
-  return dir2 === opposites[dir1];
-};
+  return dir2 === opposites[dir1]
+}
 
 const opposites: Record<Direction, Direction> = {
-  EAST: "WEST",
-  WEST: "EAST",
-  NORTH: "SOUTH",
-  SOUTH: "NORTH",
-};
+  EAST: 'WEST',
+  WEST: 'EAST',
+  NORTH: 'SOUTH',
+  SOUTH: 'NORTH',
+}
 
-type Direction = "NORTH" | "SOUTH" | "EAST" | "WEST";
+type Direction = 'NORTH' | 'SOUTH' | 'EAST' | 'WEST'
