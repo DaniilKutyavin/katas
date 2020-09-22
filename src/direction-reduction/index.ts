@@ -3,7 +3,7 @@
   @description Write a function dirReduc which will take an array of strings and returns an array of strings with the needless directions removed (W<->E or S<->N side by side).
  */
 
-export function dirReduc(directions: Directions) {
+export function dirReduc(directions: Direction[]) {
   let result: Direction[] = []
 
   for (const direction of directions) {
@@ -30,5 +30,4 @@ const opposites: Record<Direction, Direction> = {
   SOUTH: "NORTH",
 };
 
-type Directions = Array<Direction>;
 type Direction = "NORTH" | "SOUTH" | "EAST" | "WEST";
