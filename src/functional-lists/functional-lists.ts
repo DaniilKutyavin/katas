@@ -85,18 +85,15 @@ export class ListNode implements List {
   }
 
   remove<T>(x: T) {
-    const isRemovable = this.head() === x
-    const tailResult = this.tail().remove(x)
+    const tailResult = this.next.remove(x)
 
-    return isRemovable ? tailResult : new ListNode(this.head(), tailResult)
+    if (x === this.value) return tailResult
+    if (tailResult === this.next) return this
+
+    return new ListNode(this.value, tailResult)
   }
 
   append(xs: List): List {
-    if (xs.isEmpty()) {
-      return this
-    }
-
-    const l = new ListNode(xs.head(), this as List)
-    return l.append(xs.tail()) as List
+    return new ListNode(this.value, this.next.append(xs))
   }
 }

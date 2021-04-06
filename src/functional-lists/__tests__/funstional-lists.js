@@ -175,7 +175,7 @@ describe('Functional list methods', () => {
         const l2 = l1.append(mt.push('b'))
 
         expect(l2.length()).toBe(l1.length() + 1)
-        expect(l2.toString()).toBe('(b a a a)')
+        expect(l2.toString()).toBe('(a a a b)')
       })
 
       test('Appending random lists shouls have the same amount of elements', () => {
@@ -186,6 +186,20 @@ describe('Functional list methods', () => {
 
         expect(l1.append(l2).length()).toBe(l1.length() + l2.length())
       })
+    })
+  })
+
+  describe('Shared structure', () => {
+    test('Test case 1', () => {
+      const mt = new EmptyList()
+      const l1 = mt.push('d').push('d')
+      const l2 = l1.push('d')
+
+      // const l2 = l1.push('d').push('d').push('d')
+
+      console.log(l1)
+
+      expect(l1.remove('d')).toBe(mt)
     })
   })
 })
