@@ -21,16 +21,16 @@ export const pathFinder = (mazeInput: string) => {
 
     const notBlocked = maze
       .neighbours(currentPosition)
-      .filter(position => maze.in(position) === ".");
+      .filter((position) => maze.in(position) === ".");
 
-    if (notBlocked.find(position => isEqualPositions(position, maze.EXIT)))
+    if (notBlocked.find((position) => isEqualPositions(position, maze.EXIT)))
       return true;
 
     checked.push(currentPosition);
     toCheck.push(
-      ...notBlocked.filter(it =>
-        checked.every(position => !isEqualPositions(it, position))
-      )
+      ...notBlocked.filter((it) =>
+        checked.every((position) => !isEqualPositions(it, position)),
+      ),
     );
   }
   return false;
@@ -42,7 +42,7 @@ class Maze {
 
   constructor(mazeInput: string) {
     const rows = mazeInput.split("\n");
-    this.maze = rows.map(row => {
+    this.maze = rows.map((row) => {
       const cleanRow = row.replace(/\s/g, "");
       return cleanRow.split("");
     });
@@ -66,7 +66,7 @@ class Maze {
 
     return neighbourPositions.filter(
       ([x, y]) =>
-        x >= 0 && x < this.maze.length && y >= 0 && y < this.maze.length
+        x >= 0 && x < this.maze.length && y >= 0 && y < this.maze.length,
     );
   }
 }

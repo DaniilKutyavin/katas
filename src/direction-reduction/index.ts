@@ -4,30 +4,30 @@
  */
 
 export function dirReduc(directions: Direction[]) {
-  let result: Direction[] = []
+  let result: Direction[] = [];
 
   for (const direction of directions) {
-    const prev = result.slice(-1)[0]
+    const prev = result.slice(-1)[0];
 
     if (isOpposite(direction, prev)) {
-      result.pop()
+      result.pop();
     } else {
-      result.push(direction)
+      result.push(direction);
     }
   }
 
-  return result
+  return result;
 }
 
 function isOpposite(dir1: Direction, dir2: Direction) {
   const opposites: Record<Direction, Direction> = {
-    EAST: 'WEST',
-    WEST: 'EAST',
-    NORTH: 'SOUTH',
-    SOUTH: 'NORTH',
-  }
+    EAST: "WEST",
+    WEST: "EAST",
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+  };
 
-  return dir2 === opposites[dir1]
+  return dir2 === opposites[dir1];
 }
 
-type Direction = 'NORTH' | 'SOUTH' | 'EAST' | 'WEST'
+type Direction = "NORTH" | "SOUTH" | "EAST" | "WEST";

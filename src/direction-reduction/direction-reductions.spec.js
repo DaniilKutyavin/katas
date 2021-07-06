@@ -1,4 +1,4 @@
-const { dirReduc } = require(".");
+const {dirReduc} = require(".");
 
 describe("Direction Reduction", () => {
   describe("Basic specs", () => {
@@ -21,7 +21,7 @@ describe("Direction Reduction", () => {
         "should return empty array",
       () => {
         expect(dirReduc(["NORTH", "EAST", "WEST", "SOUTH"])).toEqual([]);
-      }
+      },
     );
   });
 

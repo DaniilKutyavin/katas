@@ -4,10 +4,10 @@
  */
 
 export const sumPairs = (numbers: Array<number>, sum: number) => {
-  const cache = {}
+  const cache = {};
 
   for (let num of numbers) {
-    if (cache[sum - num]) return [sum - num, num]
-    cache[num] = true
+    if (cache[sum - num]) return [sum - num, num];
+    cache[num] = true;
   }
-}
+};

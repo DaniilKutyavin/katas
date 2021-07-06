@@ -11,28 +11,30 @@
  */
 
 const int: Int = (value) => (operation) => {
-  if (typeof operation !== 'function') return value
-  return operation(value)
-}
-const operation: Operation = (fn) => (right) => (left) => fn(left, right)
+  if (typeof operation !== "function") return value;
+  return operation(value);
+};
+const operation: Operation = (fn) => (right) => (left) => fn(left, right);
 
-export const zero = int(0)
-export const one = int(1)
-export const two = int(2)
-export const three = int(3)
-export const four = int(4)
-export const five = int(5)
-export const six = int(6)
-export const seven = int(7)
-export const eight = int(8)
-export const nine = int(9)
+export const zero = int(0);
+export const one = int(1);
+export const two = int(2);
+export const three = int(3);
+export const four = int(4);
+export const five = int(5);
+export const six = int(6);
+export const seven = int(7);
+export const eight = int(8);
+export const nine = int(9);
 
-export const plus = operation((left, right) => left + right)
-export const minus = operation((left, right) => left - right)
-export const times = operation((left, right) => left * right)
-export const dividedBy = operation((left, right) => Math.floor(left / right))
+export const plus = operation((left, right) => left + right);
+export const minus = operation((left, right) => left - right);
+export const times = operation((left, right) => left * right);
+export const dividedBy = operation((left, right) => Math.floor(left / right));
 
-type Operation = (fn: OperationFun) => (right: number) => (left: number) => number
-type OperationFun = (left: number, right: number) => number
+type Operation = (
+  fn: OperationFun,
+) => (right: number) => (left: number) => number;
+type OperationFun = (left: number, right: number) => number;
 
-type Int = (value: number) => (operation: (value: number) => number) => number
+type Int = (value: number) => (operation: (value: number) => number) => number;

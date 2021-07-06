@@ -1,4 +1,4 @@
-const { pathFinder } = require(".");
+const {pathFinder} = require(".");
 
 describe("Tesint path finder", () => {
   test("should be true", () => {

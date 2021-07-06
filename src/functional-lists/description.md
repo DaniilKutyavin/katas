@@ -11,22 +11,22 @@ However, when dealing with immutable nodes, one has to take special steps to try
 There are two classes involved here: `EmptyList` and `ListNode`. Each of these should support the following operations: `toString()`, `isEmpty()`, `length()`, `push()`, `remove()`, and `append()`. If `isEmpty()` returns `false`, then the following two methods should also be supported: `head()` and `tail()`.
 
 ```js
-var list0 = new EmptyList() // => "()"
-var list1 = list0.push(3) // => "(3)"
-var list2 = list1.push(2) // => "(2 3)"
-var list3 = list2.push(1) // => "(1 2 3)"
-var list13 = list1.append(list3) // => "(3 1 2 3)"
+var list0 = new EmptyList(); // => "()"
+var list1 = list0.push(3); // => "(3)"
+var list2 = list1.push(2); // => "(2 3)"
+var list3 = list2.push(1); // => "(1 2 3)"
+var list13 = list1.append(list3); // => "(3 1 2 3)"
 
-list13.head() // => 3
-list13.tail() // => list3
+list13.head(); // => 3
+list13.tail(); // => list3
 
-list1 instanceof ListNode
-list1.tail() instanceof EmptyList
+list1 instanceof ListNode;
+list1.tail() instanceof EmptyList;
 ```
 
 ```json
 // Example
-{ "value": 1, "next": { "value": 2, "next": { "value": 3, "next": {} } } }
+{"value": 1, "next": {"value": 2, "next": {"value": 3, "next": {}}}}
 ```
 
 ## Specs

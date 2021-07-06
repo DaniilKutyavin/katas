@@ -9,24 +9,24 @@ export const snailSort = (matrix: Matrix): Array<number> => {
 };
 
 const borderClockwise = (matrix: Matrix): Array<number> => {
-  const { firstRow, lastColumn, lastRow, firstColumn } = borders(matrix);
+  const {firstRow, lastColumn, lastRow, firstColumn} = borders(matrix);
 
   return firstRow.concat(
     lastColumn.slice(1),
     lastRow.reverse().slice(1),
-    firstColumn.reverse().slice(1, -1)
+    firstColumn.reverse().slice(1, -1),
   );
 };
 
 const borders = (matrix: Matrix) => ({
   firstRow: matrix[0],
   lastRow: matrix[matrix.length - 1],
-  firstColumn: matrix.map(row => row[0]),
-  lastColumn: matrix.map(row => row[row.length - 1]),
+  firstColumn: matrix.map((row) => row[0]),
+  lastColumn: matrix.map((row) => row[row.length - 1]),
 });
 
 const removeBorder = (matrix: Matrix): Matrix =>
-  removeEdges(matrix).map(row => removeEdges(row));
+  removeEdges(matrix).map((row) => removeEdges(row));
 
 const removeEdges = (array: Array<any>) => array.slice(1, -1);
 

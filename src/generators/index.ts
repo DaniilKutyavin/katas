@@ -8,8 +8,11 @@
   The method could receive as well optional arguments to be passed to the sequencer function.
 */
 
-export function generator<T, K extends unknown[]>(sequencer: (...args: K) => () => T, ...args: K) {
+export function generator<T, K extends unknown[]>(
+  sequencer: (...args: K) => () => T,
+  ...args: K
+) {
   return {
     next: sequencer(...args),
-  }
+  };
 }

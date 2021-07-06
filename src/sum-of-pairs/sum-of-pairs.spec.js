@@ -1,4 +1,4 @@
-const { sumPairs } = require(".");
+const {sumPairs} = require(".");
 
 describe("Sum Of Pairs", () => {
   describe("Simple cases", () => {

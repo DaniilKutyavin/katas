@@ -12,5 +12,6 @@ export const trailingZeros = (n: number): number => {
   return result;
 };
 
-const highestPower = (base: number) => (x: number) => (x >= base ? logN(base)(x) : 0);
+const highestPower = (base: number) => (x: number) =>
+  x >= base ? logN(base)(x) : 0;
 const logN = (base: number) => (x: number) => Math.log(x) / Math.log(base);
